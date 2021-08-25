@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Orders;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -61,7 +62,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+
+        $orders = new Orders();
+        $ordersItem = $orders->find()->asArray()->all();
+
+        return $this->render('index', [
+            'ordersItem' => $ordersItem
+        ]);
     }
 
     /**
