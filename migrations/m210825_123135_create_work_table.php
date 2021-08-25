@@ -14,6 +14,8 @@ class m210825_123135_create_work_table extends Migration
     {
         $this->createTable('{{%work}}', [
             'id' => $this->primaryKey(),
+            'name' => $this->string(),
+            'picture' => $this->string(255),
         ]);
     }
 

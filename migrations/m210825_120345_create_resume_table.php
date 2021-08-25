@@ -14,6 +14,10 @@ class m210825_120345_create_resume_table extends Migration
     {
         $this->createTable('{{%resume}}', [
             'id' => $this->primaryKey(),
+            'name' => $this->string(),
+            'description' => $this->text(),
+            'position' => $this->string(),
+            'years' => $this->string(),
         ]);
     }
 
